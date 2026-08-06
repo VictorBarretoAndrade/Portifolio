@@ -1,0 +1,620 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Victor Barreto Andrade Gonçalves — Currículo &amp; Portfólio</title>
+<meta name="description" content="Portfólio e currículo de Victor Barreto Andrade Gonçalves — Engenharia da Computação, HPC, Machine Learning, Visão Computacional e Sistemas Autônomos.">
+<meta name="author" content="Victor Barreto Andrade Gonçalves">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>⚡</text></svg>">
+<style>
+  :root {
+    --bg: #0b0f17;
+    --bg-elev: #121826;
+    --bg-soft: #171f30;
+    --border: #253048;
+    --text: #e8ecf4;
+    --text-dim: #9aa6bd;
+    --accent: #4d9fff;
+    --accent-soft: rgba(77, 159, 255, 0.12);
+    --accent-2: #38d9c0;
+    --shadow: 0 1px 2px rgba(0,0,0,.35), 0 8px 24px rgba(0,0,0,.28);
+    --radius: 14px;
+    --maxw: 1080px;
+  }
+  html[data-theme="light"] {
+    --bg: #f7f9fc;
+    --bg-elev: #ffffff;
+    --bg-soft: #eef2f8;
+    --border: #dde4ee;
+    --text: #101726;
+    --text-dim: #5b6779;
+    --accent: #0b62d6;
+    --accent-soft: rgba(11, 98, 214, 0.09);
+    --accent-2: #0d9488;
+    --shadow: 0 1px 2px rgba(16,23,38,.06), 0 8px 24px rgba(16,23,38,.08);
+  }
+
+  * { box-sizing: border-box; }
+  html { scroll-behavior: smooth; }
+  body {
+    margin: 0;
+    background: var(--bg);
+    color: var(--text);
+    font-family: "Segoe UI", -apple-system, BlinkMacSystemFont, Roboto, Helvetica, Arial, sans-serif;
+    line-height: 1.65;
+    -webkit-font-smoothing: antialiased;
+  }
+  a { color: var(--accent); text-decoration: none; }
+  a:hover { text-decoration: underline; }
+  h1, h2, h3 { line-height: 1.25; margin: 0; font-weight: 700; letter-spacing: -0.02em; }
+
+  .wrap { max-width: var(--maxw); margin: 0 auto; padding: 0 24px; }
+
+  /* ---------- Nav ---------- */
+  header.nav {
+    position: sticky; top: 0; z-index: 50;
+    background: color-mix(in srgb, var(--bg) 82%, transparent);
+    backdrop-filter: blur(12px);
+    border-bottom: 1px solid var(--border);
+  }
+  .nav-inner {
+    display: flex; align-items: center; gap: 16px;
+    height: 62px;
+  }
+  .brand { font-weight: 700; letter-spacing: -0.02em; white-space: nowrap; }
+  .brand span { color: var(--accent); }
+  .nav-links { display: flex; gap: 6px; margin-left: auto; flex-wrap: wrap; }
+  .nav-links a {
+    color: var(--text-dim); font-size: .9rem; font-weight: 500;
+    padding: 6px 11px; border-radius: 8px;
+  }
+  .nav-links a:hover { color: var(--text); background: var(--bg-soft); text-decoration: none; }
+  .nav-tools { display: flex; gap: 8px; }
+  .icon-btn {
+    background: var(--bg-soft); color: var(--text-dim);
+    border: 1px solid var(--border); border-radius: 8px;
+    font: inherit; font-size: .8rem; font-weight: 600;
+    padding: 6px 10px; cursor: pointer; line-height: 1.4;
+  }
+  .icon-btn:hover { color: var(--text); border-color: var(--accent); }
+
+  /* ---------- Hero ---------- */
+  .hero { padding: 72px 0 56px; }
+  .hero-grid { display: grid; grid-template-columns: 1fr auto; gap: 40px; align-items: center; }
+  .eyebrow {
+    display: inline-block; font-size: .78rem; font-weight: 700;
+    text-transform: uppercase; letter-spacing: .1em;
+    color: var(--accent); background: var(--accent-soft);
+    padding: 5px 12px; border-radius: 999px; margin-bottom: 18px;
+  }
+  .hero h1 { font-size: clamp(2rem, 5.2vw, 3.1rem); margin-bottom: 12px; }
+  .hero .role { font-size: clamp(1rem, 2.2vw, 1.2rem); color: var(--accent-2); font-weight: 600; margin-bottom: 18px; }
+  .hero p.lede { color: var(--text-dim); font-size: 1.03rem; max-width: 62ch; margin: 0 0 26px; }
+  .avatar {
+    width: 168px; height: 168px; border-radius: 50%;
+    display: grid; place-items: center;
+    font-size: 3.2rem; font-weight: 700; letter-spacing: -.04em;
+    color: #fff;
+    background: linear-gradient(135deg, var(--accent), var(--accent-2));
+    box-shadow: var(--shadow);
+    flex-shrink: 0;
+  }
+  .cta { display: flex; flex-wrap: wrap; gap: 10px; }
+  .btn {
+    display: inline-flex; align-items: center; gap: 8px;
+    padding: 10px 18px; border-radius: 10px;
+    font-weight: 600; font-size: .93rem;
+    border: 1px solid var(--border);
+    background: var(--bg-elev); color: var(--text);
+    transition: transform .12s ease, border-color .12s ease;
+  }
+  .btn:hover { text-decoration: none; transform: translateY(-1px); border-color: var(--accent); }
+  .btn.primary { background: var(--accent); border-color: var(--accent); color: #fff; }
+  .btn.primary:hover { opacity: .92; }
+
+  .meta-row {
+    display: flex; flex-wrap: wrap; gap: 8px 22px;
+    margin-top: 26px; font-size: .9rem; color: var(--text-dim);
+  }
+
+  /* ---------- Sections ---------- */
+  section { padding: 56px 0; border-top: 1px solid var(--border); }
+  .sec-head { margin-bottom: 30px; }
+  .sec-head h2 { font-size: 1.55rem; display: flex; align-items: center; gap: 12px; }
+  .sec-head h2::before {
+    content: ""; width: 4px; height: 26px; border-radius: 4px;
+    background: linear-gradient(var(--accent), var(--accent-2));
+  }
+  .sec-head p { color: var(--text-dim); margin: 8px 0 0 16px; font-size: .95rem; }
+
+  /* ---------- Cards / grids ---------- */
+  .grid { display: grid; gap: 18px; }
+  .g2 { grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); }
+  .g3 { grid-template-columns: repeat(auto-fit, minmax(268px, 1fr)); }
+  .card {
+    background: var(--bg-elev); border: 1px solid var(--border);
+    border-radius: var(--radius); padding: 22px;
+    box-shadow: var(--shadow);
+  }
+  .card h3 { font-size: 1.05rem; margin-bottom: 6px; }
+  .card .sub { color: var(--accent-2); font-weight: 600; font-size: .88rem; margin-bottom: 4px; }
+  .card .when { color: var(--text-dim); font-size: .82rem; margin-bottom: 12px; }
+  .card p, .card li { color: var(--text-dim); font-size: .93rem; }
+  .card ul { margin: 0; padding-left: 18px; }
+  .card li { margin-bottom: 7px; }
+  .card li:last-child { margin-bottom: 0; }
+
+  .proj { display: flex; flex-direction: column; }
+  .proj .tag-top {
+    font-size: .72rem; font-weight: 700; text-transform: uppercase; letter-spacing: .08em;
+    color: var(--accent); margin-bottom: 10px;
+  }
+  .proj p { flex: 1; }
+  .tags { display: flex; flex-wrap: wrap; gap: 6px; margin-top: 14px; }
+  .tag {
+    font-size: .74rem; font-weight: 600; padding: 3px 9px;
+    border-radius: 6px; background: var(--bg-soft);
+    color: var(--text-dim); border: 1px solid var(--border);
+  }
+
+  /* ---------- Timeline ---------- */
+  .timeline { position: relative; padding-left: 26px; }
+  .timeline::before {
+    content: ""; position: absolute; left: 6px; top: 8px; bottom: 8px;
+    width: 2px; background: var(--border);
+  }
+  .tl-item { position: relative; margin-bottom: 22px; }
+  .tl-item:last-child { margin-bottom: 0; }
+  .tl-item::before {
+    content: ""; position: absolute; left: -24px; top: 24px;
+    width: 11px; height: 11px; border-radius: 50%;
+    background: var(--accent); border: 2px solid var(--bg);
+  }
+
+  /* ---------- Skills ---------- */
+  .skill-block { margin-bottom: 18px; }
+  .skill-block:last-child { margin-bottom: 0; }
+  .skill-block h4 {
+    margin: 0 0 10px; font-size: .8rem; font-weight: 700;
+    text-transform: uppercase; letter-spacing: .08em; color: var(--text-dim);
+  }
+  .chips { display: flex; flex-wrap: wrap; gap: 8px; }
+  .chip {
+    padding: 6px 13px; border-radius: 8px; font-size: .87rem; font-weight: 500;
+    background: var(--accent-soft); color: var(--text);
+    border: 1px solid color-mix(in srgb, var(--accent) 26%, transparent);
+  }
+
+  /* ---------- Awards ---------- */
+  .award { display: flex; gap: 16px; align-items: flex-start; }
+  .medal { font-size: 1.7rem; line-height: 1; flex-shrink: 0; }
+
+  /* ---------- Contact ---------- */
+  .contact-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(230px, 1fr)); gap: 14px; }
+  .contact-item {
+    display: flex; align-items: center; gap: 12px;
+    background: var(--bg-elev); border: 1px solid var(--border);
+    border-radius: var(--radius); padding: 16px 18px;
+  }
+  .contact-item:hover { border-color: var(--accent); text-decoration: none; }
+  .contact-item .ci-ico { font-size: 1.25rem; }
+  .contact-item .ci-label { font-size: .74rem; text-transform: uppercase; letter-spacing: .07em; color: var(--text-dim); }
+  .contact-item .ci-val { font-size: .92rem; color: var(--text); font-weight: 600; word-break: break-word; }
+
+  footer {
+    border-top: 1px solid var(--border);
+    padding: 28px 0; text-align: center;
+    color: var(--text-dim); font-size: .86rem;
+  }
+
+  @media (max-width: 760px) {
+    .hero { padding: 48px 0 40px; }
+    .hero-grid { grid-template-columns: 1fr; }
+    .avatar { width: 108px; height: 108px; font-size: 2.1rem; order: -1; }
+    .nav-links { display: none; }
+    section { padding: 44px 0; }
+  }
+  @media print {
+    header.nav, .nav-tools, .cta, footer { display: none; }
+    body { background: #fff; color: #000; }
+  }
+</style>
+</head>
+<body>
+
+<header class="nav">
+  <div class="wrap nav-inner">
+    <div class="brand">Victor<span>.</span></div>
+    <nav class="nav-links">
+      <a href="#sobre"      data-pt="Sobre"      data-en="About">Sobre</a>
+      <a href="#experiencia" data-pt="Experiência" data-en="Experience">Experiência</a>
+      <a href="#projetos"   data-pt="Projetos"   data-en="Projects">Projetos</a>
+      <a href="#skills"     data-pt="Skills"     data-en="Skills">Skills</a>
+      <a href="#formacao"   data-pt="Formação"   data-en="Education">Formação</a>
+      <a href="#contato"    data-pt="Contato"    data-en="Contact">Contato</a>
+    </nav>
+    <div class="nav-tools">
+      <button class="icon-btn" id="langBtn" type="button" title="Change language">EN</button>
+      <button class="icon-btn" id="themeBtn" type="button" title="Alternar tema">☀</button>
+    </div>
+  </div>
+</header>
+
+<!-- ===================== HERO ===================== -->
+<div class="wrap hero">
+  <div class="hero-grid">
+    <div>
+      <span class="eyebrow"
+            data-pt="Salvador, Bahia — Brasil"
+            data-en="Salvador, Bahia — Brazil">Salvador, Bahia — Brasil</span>
+      <h1>Victor Barreto Andrade Gonçalves</h1>
+      <div class="role"
+           data-pt="Engenharia da Computação · HPC · Machine Learning · Sistemas Autônomos"
+           data-en="Computing Engineering · HPC · Machine Learning · Autonomous Systems">Engenharia da Computação · HPC · Machine Learning · Sistemas Autônomos</div>
+      <p class="lede"
+         data-pt="Estudante de Engenharia da Computação com experiência prática em Computação de Alto Desempenho (HPC), machine learning e sistemas autônomos. Histórico em projetos de IA aplicada com impacto industrial real — de visão computacional para inspeção automatizada a redes neurais para análise preditiva."
+         data-en="Computing Engineering student with hands-on experience in High Performance Computing, machine learning and autonomous systems. Proven track record in applied AI projects with real-world industrial impact — from computer vision for automated inspection to neural networks for predictive analysis.">Estudante de Engenharia da Computação com experiência prática em Computação de Alto Desempenho (HPC), machine learning e sistemas autônomos. Histórico em projetos de IA aplicada com impacto industrial real — de visão computacional para inspeção automatizada a redes neurais para análise preditiva.</p>
+
+      <div class="cta">
+        <a class="btn primary" href="victor_barreto_cv.pdf" target="_blank" rel="noopener"
+           data-pt="⬇ Baixar currículo (PDF)" data-en="⬇ Download résumé (PDF)">⬇ Baixar currículo (PDF)</a>
+        <a class="btn" href="https://www.linkedin.com/in/victor-barreto-andrade-gon%C3%A7alves-8148872ba/" target="_blank" rel="noopener">LinkedIn</a>
+        <a class="btn" href="https://github.com/VictorBarretoAndrade" target="_blank" rel="noopener">GitHub</a>
+      </div>
+
+      <div class="meta-row">
+        <span>✉ <a href="mailto:victorba.goncalves@gmail.com">victorba.goncalves@gmail.com</a></span>
+        <span>☎ <a href="tel:+5571988315880">+55 (71) 98831-5880</a></span>
+        <span data-pt="🌐 Português (nativo) · Inglês (C2)" data-en="🌐 Portuguese (native) · English (C2)">🌐 Português (nativo) · Inglês (C2)</span>
+      </div>
+    </div>
+    <div class="avatar" aria-hidden="true">VG</div>
+  </div>
+</div>
+
+<!-- ===================== SOBRE ===================== -->
+<section id="sobre">
+  <div class="wrap">
+    <div class="sec-head">
+      <h2 data-pt="Sobre mim" data-en="About me">Sobre mim</h2>
+    </div>
+    <div class="grid g3">
+      <div class="card">
+        <h3 data-pt="⚙ Alto Desempenho" data-en="⚙ High Performance">⚙ Alto Desempenho</h3>
+        <p data-pt="Otimizo pipelines de deep learning em clusters HPC com SLURM, paralelização de processos e alocação eficiente de GPU — reduzindo significativamente o tempo de computação."
+           data-en="I optimize deep learning pipelines on HPC clusters with SLURM, process parallelization and efficient GPU allocation — significantly cutting computation time.">Otimizo pipelines de deep learning em clusters HPC com SLURM, paralelização de processos e alocação eficiente de GPU — reduzindo significativamente o tempo de computação.</p>
+      </div>
+      <div class="card">
+        <h3 data-pt="🧠 IA Aplicada" data-en="🧠 Applied AI">🧠 IA Aplicada</h3>
+        <p data-pt="Modelos de deep learning (PyTorch, TensorFlow, Keras) aplicados a problemas reais: simulação molecular, descoberta de fármacos, diagnóstico por imagem e inspeção industrial."
+           data-en="Deep learning models (PyTorch, TensorFlow, Keras) applied to real problems: molecular simulation, drug discovery, medical imaging diagnostics and industrial inspection.">Modelos de deep learning (PyTorch, TensorFlow, Keras) aplicados a problemas reais: simulação molecular, descoberta de fármacos, diagnóstico por imagem e inspeção industrial.</p>
+      </div>
+      <div class="card">
+        <h3 data-pt="🤖 Sistemas Autônomos" data-en="🤖 Autonomous Systems">🤖 Sistemas Autônomos</h3>
+        <p data-pt="Robótica com ROS2, visão computacional e aprendizado por reforço — de robôs de inspeção industrial a veículos autônomos em competição nacional."
+           data-en="Robotics with ROS2, computer vision and reinforcement learning — from industrial inspection robots to autonomous vehicles in national competition.">Robótica com ROS2, visão computacional e aprendizado por reforço — de robôs de inspeção industrial a veículos autônomos em competição nacional.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===================== EXPERIÊNCIA ===================== -->
+<section id="experiencia">
+  <div class="wrap">
+    <div class="sec-head">
+      <h2 data-pt="Experiência" data-en="Experience">Experiência</h2>
+      <p data-pt="Atuação profissional, liderança e voluntariado."
+         data-en="Professional, leadership and volunteer roles.">Atuação profissional, liderança e voluntariado.</p>
+    </div>
+
+    <div class="timeline">
+      <div class="tl-item">
+        <div class="card">
+          <h3 data-pt="Estagiário de Computação de Alto Desempenho (HPC)" data-en="High Performance Computing Intern">Estagiário de Computação de Alto Desempenho (HPC)</h3>
+          <div class="sub">SENAI CIMATEC — Salvador, BA</div>
+          <div class="when" data-pt="Out 2025 — Atual" data-en="Oct 2025 — Present">Out 2025 — Atual</div>
+          <ul>
+            <li data-pt="Desenvolvi e implantei soluções computacionais de alto desempenho para simulação molecular e descoberta de fármacos, aplicando modelos de deep learning (PyTorch, TensorFlow) para acelerar a análise farmacêutica preditiva."
+                data-en="Developed and deployed high-performance computational solutions for molecular simulation and drug discovery, applying deep learning models (PyTorch, TensorFlow) to accelerate predictive pharmaceutical analysis.">Desenvolvi e implantei soluções computacionais de alto desempenho para simulação molecular e descoberta de fármacos, aplicando modelos de deep learning (PyTorch, TensorFlow) para acelerar a análise farmacêutica preditiva.</li>
+            <li data-pt="Otimizei pipelines de deep learning em ambientes HPC baseados em cluster com SLURM, alcançando reduções significativas no tempo de computação via paralelização de processos e alocação eficiente de recursos de GPU."
+                data-en="Optimized deep learning pipelines in cluster-based HPC environments using SLURM, achieving significant reductions in computation time through process parallelization and efficient GPU resource allocation.">Otimizei pipelines de deep learning em ambientes HPC baseados em cluster com SLURM, alcançando reduções significativas no tempo de computação via paralelização de processos e alocação eficiente de recursos de GPU.</li>
+            <li data-pt="Experiência prática com processamento de dados em larga escala e fluxos de trabalho de simulação aplicáveis a ambientes de P&amp;D industrial."
+                data-en="Hands-on experience with large-scale data processing and simulation workflows applicable to industrial engineering and manufacturing R&amp;D environments.">Experiência prática com processamento de dados em larga escala e fluxos de trabalho de simulação aplicáveis a ambientes de P&amp;D industrial.</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="tl-item">
+        <div class="card">
+          <h3 data-pt="Captain — AWS Cloud Club" data-en="AWS Cloud Club Captain">Captain — AWS Cloud Club</h3>
+          <div class="sub">Amazon Web Services / SENAI CIMATEC — Salvador, BA</div>
+          <div class="when" data-pt="Nov 2025 — Atual" data-en="Nov 2025 — Present">Nov 2025 — Atual</div>
+          <ul>
+            <li data-pt="Selecionado pela Amazon Web Services para liderar e expandir a comunidade de cloud computing do campus; organizei workshops, hackathons e eventos educacionais sobre tecnologias AWS para mais de 100 estudantes."
+                data-en="Selected by Amazon Web Services to lead and grow the campus cloud computing community; organized workshops, hackathons and educational events on AWS technologies for 100+ students.">Selecionado pela Amazon Web Services para liderar e expandir a comunidade de cloud computing do campus; organizei workshops, hackathons e eventos educacionais sobre tecnologias AWS para mais de 100 estudantes.</li>
+            <li data-pt="Promovi inovação baseada em nuvem e resolução colaborativa de problemas, cultivando uma cultura de excelência técnica alinhada às demandas da Indústria 4.0."
+                data-en="Promoted cloud-based innovation and collaborative problem-solving, fostering a culture of technical excellence aligned with Industry 4.0 demands.">Promovi inovação baseada em nuvem e resolução colaborativa de problemas, cultivando uma cultura de excelência técnica alinhada às demandas da Indústria 4.0.</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="tl-item">
+        <div class="card">
+          <h3 data-pt="Tesoureiro &amp; Orientador de Projetos" data-en="Treasurer &amp; Project Advisor">Tesoureiro &amp; Orientador de Projetos</h3>
+          <div class="sub">IEEE Robotics and Automation Society — Student Chapter</div>
+          <div class="when" data-pt="Mar 2024 — Atual" data-en="Mar 2024 — Present">Mar 2024 — Atual</div>
+          <ul>
+            <li data-pt="<b>Orientador de Projetos (2025–2026):</b> liderei uma equipe multidisciplinar no desenvolvimento de um sistema de visão computacional baseado em CNN para análise automatizada de raios-X (detecção de pneumonia e tuberculose), com alta acurácia diagnóstica. Orientei boas práticas de ciência de dados, IA ética na saúde e design de interface clínica."
+                data-en="<b>Project Advisor (2025–2026):</b> led a multidisciplinary team developing a CNN-based computer vision system for automated X-ray analysis (pneumonia and tuberculosis detection), achieving high diagnostic accuracy. Guided data science best practices, ethical AI in healthcare and clinical interface design."><b>Orientador de Projetos (2025–2026):</b> liderei uma equipe multidisciplinar no desenvolvimento de um sistema de visão computacional baseado em CNN para análise automatizada de raios-X (detecção de pneumonia e tuberculose), com alta acurácia diagnóstica. Orientei boas práticas de ciência de dados, IA ética na saúde e design de interface clínica.</li>
+            <li data-pt="<b>Tesoureiro (jan 2025 – atual):</b> gestão de planejamento financeiro estratégico, controle orçamentário e captação de recursos via grants do IEEE e patrocínios externos, garantindo a sustentabilidade financeira do capítulo."
+                data-en="<b>Treasurer (Jan 2025 – present):</b> managed strategic financial planning, budget control and resource mobilization through IEEE grants and external sponsorships, ensuring chapter financial sustainability."><b>Tesoureiro (jan 2025 – atual):</b> gestão de planejamento financeiro estratégico, controle orçamentário e captação de recursos via grants do IEEE e patrocínios externos, garantindo a sustentabilidade financeira do capítulo.</li>
+            <li data-pt="<b>Trainee (2024):</b> co-desenvolvi o Leak Track — robô autônomo de inspeção integrando ROS2, CNNs e imageamento térmico FLIR para detecção de vazamentos em tempo real em estruturas industriais de acesso restrito."
+                data-en="<b>Trainee (2024):</b> co-developed Leak Track — an autonomous inspection robot integrating ROS2, CNNs and FLIR thermal imaging for real-time leak detection in restricted-access industrial structures."><b>Trainee (2024):</b> co-desenvolvi o Leak Track — robô autônomo de inspeção integrando ROS2, CNNs e imageamento térmico FLIR para detecção de vazamentos em tempo real em estruturas industriais de acesso restrito.</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="tl-item">
+        <div class="card">
+          <h3 data-pt="Monitor Voluntário — Programação Competitiva" data-en="Volunteer Teaching Monitor — Competitive Programming">Monitor Voluntário — Programação Competitiva</h3>
+          <div class="sub" data-pt="Clube de Programação SENAI CIMATEC" data-en="SENAI CIMATEC Programming Club">Clube de Programação SENAI CIMATEC</div>
+          <div class="when" data-pt="Nov 2024 — Nov 2025" data-en="Nov 2024 — Nov 2025">Nov 2024 — Nov 2025</div>
+          <ul>
+            <li data-pt="Ensinei algoritmos, estruturas de dados e técnicas de otimização em C++ para estudantes universitários, criando listas de exercícios baseadas na Olimpíada Brasileira de Informática (OBI) e na Maratona de Programação da SBC."
+                data-en="Taught algorithms, data structures and optimization techniques in C++ to university students, creating exercise sets based on the Brazilian Olympiad in Informatics (OBI) and the SBC Programming Marathon.">Ensinei algoritmos, estruturas de dados e técnicas de otimização em C++ para estudantes universitários, criando listas de exercícios baseadas na Olimpíada Brasileira de Informática (OBI) e na Maratona de Programação da SBC.</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===================== PROJETOS ===================== -->
+<section id="projetos">
+  <div class="wrap">
+    <div class="sec-head">
+      <h2 data-pt="Portfólio de projetos" data-en="Project portfolio">Portfólio de projetos</h2>
+      <p data-pt="Trabalhos aplicados em IA, HPC, robótica e sistemas autônomos."
+         data-en="Applied work in AI, HPC, robotics and autonomous systems.">Trabalhos aplicados em IA, HPC, robótica e sistemas autônomos.</p>
+    </div>
+
+    <div class="grid g3">
+      <article class="card proj">
+        <div class="tag-top" data-pt="Robótica industrial" data-en="Industrial robotics">Robótica industrial</div>
+        <h3>Leak Track</h3>
+        <p data-pt="Robô autônomo de inspeção para detecção de vazamentos em tempo real em estruturas industriais de acesso restrito. Integra navegação ROS2, CNNs de visão computacional e imageamento térmico FLIR — aplicação direta em segurança de planta e manufatura."
+           data-en="Autonomous inspection robot for real-time leak detection in restricted-access industrial structures. Integrates ROS2 navigation, computer vision CNNs and FLIR thermal imaging — directly applicable to plant safety and manufacturing.">Robô autônomo de inspeção para detecção de vazamentos em tempo real em estruturas industriais de acesso restrito. Integra navegação ROS2, CNNs de visão computacional e imageamento térmico FLIR — aplicação direta em segurança de planta e manufatura.</p>
+        <div class="tags"><span class="tag">ROS2</span><span class="tag">CNN</span><span class="tag">FLIR</span><span class="tag">Python</span><span class="tag">IEEE RAS</span></div>
+      </article>
+
+      <article class="card proj">
+        <div class="tag-top" data-pt="IA na saúde" data-en="AI in healthcare">IA na saúde</div>
+        <h3 data-pt="Visão computacional para raios-X" data-en="Computer vision for X-rays">Visão computacional para raios-X</h3>
+        <p data-pt="Sistema baseado em CNN para análise automatizada de radiografias, com detecção de pneumonia e tuberculose e alta acurácia diagnóstica. Liderei a equipe multidisciplinar cobrindo pipeline de dados, IA ética em saúde e interface clínica."
+           data-en="CNN-based system for automated radiography analysis, detecting pneumonia and tuberculosis with high diagnostic accuracy. Led the multidisciplinary team across the data pipeline, ethical AI in healthcare and the clinical interface.">Sistema baseado em CNN para análise automatizada de radiografias, com detecção de pneumonia e tuberculose e alta acurácia diagnóstica. Liderei a equipe multidisciplinar cobrindo pipeline de dados, IA ética em saúde e interface clínica.</p>
+        <div class="tags"><span class="tag">Deep Learning</span><span class="tag">CNN</span><span class="tag">Keras</span><span class="tag">Medical Imaging</span></div>
+      </article>
+
+      <article class="card proj">
+        <div class="tag-top" data-pt="Aprendizado por reforço" data-en="Reinforcement learning">Aprendizado por reforço</div>
+        <h3>AWS DeepRacer</h3>
+        <p data-pt="Modelo de condução autônoma treinado com aprendizado por reforço: engenharia de função de recompensa, tuning de hiperparâmetros e otimização de trajetória. 6º lugar na Final Nacional (CSBC 2025) e 3º lugar na Semifinal Nordeste."
+           data-en="Autonomous driving model trained with reinforcement learning: reward function engineering, hyperparameter tuning and trajectory optimization. 6th place in the National Final (CSBC 2025) and 3rd place in the Northeast Semifinal.">Modelo de condução autônoma treinado com aprendizado por reforço: engenharia de função de recompensa, tuning de hiperparâmetros e otimização de trajetória. 6º lugar na Final Nacional (CSBC 2025) e 3º lugar na Semifinal Nordeste.</p>
+        <div class="tags"><span class="tag">Reinforcement Learning</span><span class="tag">AWS</span><span class="tag">Python</span><span class="tag">Autonomous Driving</span></div>
+      </article>
+
+      <article class="card proj">
+        <div class="tag-top" data-pt="HPC &amp; Bioinformática" data-en="HPC &amp; Bioinformatics">HPC &amp; Bioinformática</div>
+        <h3 data-pt="Descoberta de fármacos acelerada por HPC" data-en="HPC-accelerated drug discovery">Descoberta de fármacos acelerada por HPC</h3>
+        <p data-pt="Pipelines de deep learning para simulação molecular e análise farmacêutica preditiva, executados em cluster com SLURM. Foco em paralelização de processos e alocação eficiente de GPU para reduzir tempo de computação em larga escala."
+           data-en="Deep learning pipelines for molecular simulation and predictive pharmaceutical analysis, running on a SLURM-managed cluster. Focused on process parallelization and efficient GPU allocation to cut large-scale computation time.">Pipelines de deep learning para simulação molecular e análise farmacêutica preditiva, executados em cluster com SLURM. Foco em paralelização de processos e alocação eficiente de GPU para reduzir tempo de computação em larga escala.</p>
+        <div class="tags"><span class="tag">SLURM</span><span class="tag">PyTorch</span><span class="tag">TensorFlow</span><span class="tag">GPU</span><span class="tag">Bioinformatics</span></div>
+      </article>
+
+      <article class="card proj">
+        <div class="tag-top" data-pt="Pesquisa" data-en="Research">Pesquisa</div>
+        <h3 data-pt="Artigo científico premiado" data-en="Award-winning scientific paper">Artigo científico premiado</h3>
+        <p data-pt="2º lugar no Concurso de Artigos Científicos do Seminário Desafio Pesquisador da SENAI CIMATEC, com produção acadêmica na interseção entre computação de alto desempenho e inteligência artificial aplicada."
+           data-en="2nd place in the Scientific Article Competition at SENAI CIMATEC's Seminário Desafio Pesquisador, with academic work at the intersection of high performance computing and applied artificial intelligence.">2º lugar no Concurso de Artigos Científicos do Seminário Desafio Pesquisador da SENAI CIMATEC, com produção acadêmica na interseção entre computação de alto desempenho e inteligência artificial aplicada.</p>
+        <div class="tags"><span class="tag" data-pt="Pesquisa" data-en="Research">Pesquisa</span><span class="tag">HPC</span><span class="tag">IA</span></div>
+      </article>
+
+      <article class="card proj">
+        <div class="tag-top" data-pt="Educação" data-en="Education">Educação</div>
+        <h3 data-pt="Programação competitiva em C++" data-en="Competitive programming in C++">Programação competitiva em C++</h3>
+        <p data-pt="Material didático e listas de exercícios de algoritmos, estruturas de dados e otimização, baseados na OBI e na Maratona de Programação da SBC, usados na monitoria do Clube de Programação da CIMATEC."
+           data-en="Teaching material and exercise sets on algorithms, data structures and optimization, based on OBI and the SBC Programming Marathon, used in the CIMATEC Programming Club monitoring sessions.">Material didático e listas de exercícios de algoritmos, estruturas de dados e otimização, baseados na OBI e na Maratona de Programação da SBC, usados na monitoria do Clube de Programação da CIMATEC.</p>
+        <div class="tags"><span class="tag">C++</span><span class="tag" data-pt="Algoritmos" data-en="Algorithms">Algoritmos</span><span class="tag" data-pt="Estruturas de dados" data-en="Data structures">Estruturas de dados</span></div>
+      </article>
+    </div>
+  </div>
+</section>
+
+<!-- ===================== PRÊMIOS ===================== -->
+<section id="premios">
+  <div class="wrap">
+    <div class="sec-head">
+      <h2 data-pt="Prêmios &amp; reconhecimentos" data-en="Honors &amp; awards">Prêmios &amp; reconhecimentos</h2>
+    </div>
+    <div class="grid g2">
+      <div class="card award">
+        <div class="medal">🏆</div>
+        <div>
+          <h3 data-pt="6º lugar — Final Nacional AWS DeepRacer (CSBC 2025)" data-en="6th Place — AWS DeepRacer National Final (CSBC 2025)">6º lugar — Final Nacional AWS DeepRacer (CSBC 2025)</h3>
+          <p data-pt="Corrida de IA com veículos autônomos usando aprendizado por reforço. 3º lugar na Semifinal Nordeste e Top 10 entre todas as universidades brasileiras, representando a SENAI CIMATEC e o estado da Bahia."
+             data-en="Autonomous vehicle AI racing using reinforcement learning. 3rd place in the Northeast Semifinal and Top 10 among all Brazilian universities, representing SENAI CIMATEC and the state of Bahia.">Corrida de IA com veículos autônomos usando aprendizado por reforço. 3º lugar na Semifinal Nordeste e Top 10 entre todas as universidades brasileiras, representando a SENAI CIMATEC e o estado da Bahia.</p>
+        </div>
+      </div>
+      <div class="card award">
+        <div class="medal">🥈</div>
+        <div>
+          <h3 data-pt="2º lugar — Concurso de Artigos Científicos" data-en="2nd Place — Scientific Article Competition">2º lugar — Concurso de Artigos Científicos</h3>
+          <p data-pt="Seminário Desafio Pesquisador — SENAI CIMATEC."
+             data-en="Seminário Desafio Pesquisador — SENAI CIMATEC.">Seminário Desafio Pesquisador — SENAI CIMATEC.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===================== SKILLS ===================== -->
+<section id="skills">
+  <div class="wrap">
+    <div class="sec-head">
+      <h2 data-pt="Competências técnicas" data-en="Technical skills">Competências técnicas</h2>
+    </div>
+    <div class="grid g2">
+      <div class="card">
+        <div class="skill-block">
+          <h4 data-pt="Linguagens de programação" data-en="Programming languages">Linguagens de programação</h4>
+          <div class="chips"><span class="chip">Python</span><span class="chip">C++</span></div>
+        </div>
+        <div class="skill-block">
+          <h4 data-pt="Frameworks &amp; ferramentas" data-en="Frameworks &amp; tools">Frameworks &amp; ferramentas</h4>
+          <div class="chips">
+            <span class="chip">PyTorch</span><span class="chip">TensorFlow</span><span class="chip">Keras</span>
+            <span class="chip">SLURM</span><span class="chip">Git</span><span class="chip">GitHub</span><span class="chip">GitLab</span>
+          </div>
+        </div>
+      </div>
+      <div class="card">
+        <div class="skill-block">
+          <h4 data-pt="Áreas técnicas" data-en="Technical areas">Áreas técnicas</h4>
+          <div class="chips">
+            <span class="chip" data-pt="Computação de Alto Desempenho (HPC)" data-en="High Performance Computing (HPC)">Computação de Alto Desempenho (HPC)</span>
+            <span class="chip" data-pt="Machine Learning &amp; Deep Learning" data-en="Machine Learning &amp; Deep Learning">Machine Learning &amp; Deep Learning</span>
+            <span class="chip" data-pt="Visão Computacional" data-en="Computer Vision">Visão Computacional</span>
+            <span class="chip" data-pt="Sistemas Autônomos (ROS2)" data-en="Autonomous Systems (ROS2)">Sistemas Autônomos (ROS2)</span>
+            <span class="chip" data-pt="Cloud Computing (AWS)" data-en="Cloud Computing (AWS)">Cloud Computing (AWS)</span>
+            <span class="chip" data-pt="Bioinformática" data-en="Bioinformatics">Bioinformática</span>
+            <span class="chip" data-pt="Programação Competitiva" data-en="Competitive Programming">Programação Competitiva</span>
+          </div>
+        </div>
+        <div class="skill-block">
+          <h4 data-pt="Idiomas" data-en="Languages">Idiomas</h4>
+          <div class="chips">
+            <span class="chip" data-pt="Português — nativo" data-en="Portuguese — native">Português — nativo</span>
+            <span class="chip" data-pt="Inglês — C2 (EF SET Proficient)" data-en="English — C2 (EF SET Proficient)">Inglês — C2 (EF SET Proficient)</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===================== FORMAÇÃO ===================== -->
+<section id="formacao">
+  <div class="wrap">
+    <div class="sec-head">
+      <h2 data-pt="Formação acadêmica" data-en="Education">Formação acadêmica</h2>
+    </div>
+    <div class="grid g2">
+      <div class="card">
+        <h3 data-pt="Bacharelado em Engenharia da Computação" data-en="Bachelor's Degree — Computing Engineering">Bacharelado em Engenharia da Computação</h3>
+        <div class="sub" data-pt="SENAI CIMATEC — Salvador, BA" data-en="SENAI CIMATEC University — Salvador, BA">SENAI CIMATEC — Salvador, BA</div>
+        <div class="when" data-pt="Jan 2024 — Dez 2028 (previsto)" data-en="Jan 2024 — Dec 2028 (expected)">Jan 2024 — Dez 2028 (previsto)</div>
+      </div>
+      <div class="card">
+        <h3 data-pt="Bacharelado em Sistemas de Informação" data-en="Bachelor's Degree — Information Systems">Bacharelado em Sistemas de Informação</h3>
+        <div class="sub" data-pt="Universidade Federal da Bahia (UFBA) — Salvador, BA" data-en="Universidade Federal da Bahia (UFBA) — Salvador, BA">Universidade Federal da Bahia (UFBA) — Salvador, BA</div>
+        <div class="when" data-pt="2026 — 2030 (previsto)" data-en="2026 — 2030 (expected)">2026 — 2030 (previsto)</div>
+      </div>
+    </div>
+
+    <div class="sec-head" style="margin-top:38px">
+      <h2 data-pt="Interesses" data-en="Interests">Interesses</h2>
+    </div>
+    <div class="chips">
+      <span class="chip" data-pt="Automação industrial e inteligência de manufatura" data-en="Industrial automation and manufacturing intelligence">Automação industrial e inteligência de manufatura</span>
+      <span class="chip" data-pt="Computação de Alto Desempenho" data-en="High Performance Computing">Computação de Alto Desempenho</span>
+      <span class="chip" data-pt="IA aplicada à otimização de processos" data-en="AI applied to process optimization">IA aplicada à otimização de processos</span>
+      <span class="chip" data-pt="Sistemas autônomos e robótica" data-en="Autonomous systems and robotics">Sistemas autônomos e robótica</span>
+      <span class="chip">Cloud Computing</span>
+      <span class="chip" data-pt="Programação Competitiva" data-en="Competitive Programming">Programação Competitiva</span>
+      <span class="chip" data-pt="Educação através da tecnologia" data-en="Education through technology">Educação através da tecnologia</span>
+    </div>
+  </div>
+</section>
+
+<!-- ===================== CONTATO ===================== -->
+<section id="contato">
+  <div class="wrap">
+    <div class="sec-head">
+      <h2 data-pt="Contato" data-en="Contact">Contato</h2>
+      <p data-pt="Aberto a oportunidades em HPC, IA aplicada e sistemas autônomos."
+         data-en="Open to opportunities in HPC, applied AI and autonomous systems.">Aberto a oportunidades em HPC, IA aplicada e sistemas autônomos.</p>
+    </div>
+    <div class="contact-grid">
+      <a class="contact-item" href="mailto:victorba.goncalves@gmail.com">
+        <span class="ci-ico">✉</span>
+        <span><span class="ci-label">E-mail</span><br><span class="ci-val">victorba.goncalves@gmail.com</span></span>
+      </a>
+      <a class="contact-item" href="tel:+5571988315880">
+        <span class="ci-ico">☎</span>
+        <span><span class="ci-label" data-pt="Telefone" data-en="Phone">Telefone</span><br><span class="ci-val">+55 (71) 98831-5880</span></span>
+      </a>
+      <a class="contact-item" href="https://www.linkedin.com/in/victor-barreto-andrade-gon%C3%A7alves-8148872ba/" target="_blank" rel="noopener">
+        <span class="ci-ico">in</span>
+        <span><span class="ci-label">LinkedIn</span><br><span class="ci-val">victor-barreto-andrade</span></span>
+      </a>
+      <a class="contact-item" href="https://github.com/VictorBarretoAndrade" target="_blank" rel="noopener">
+        <span class="ci-ico">⌥</span>
+        <span><span class="ci-label">GitHub</span><br><span class="ci-val">VictorBarretoAndrade</span></span>
+      </a>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">
+    <span data-pt="© 2026 Victor Barreto Andrade Gonçalves — Salvador, Bahia, Brasil"
+          data-en="© 2026 Victor Barreto Andrade Gonçalves — Salvador, Bahia, Brazil">© 2026 Victor Barreto Andrade Gonçalves — Salvador, Bahia, Brasil</span>
+  </div>
+</footer>
+
+<script>
+(function () {
+  // ---------- Tema ----------
+  var root = document.documentElement;
+  var themeBtn = document.getElementById('themeBtn');
+  var stored = null;
+  try { stored = localStorage.getItem('theme'); } catch (e) {}
+  var prefersLight = window.matchMedia && window.matchMedia('(prefers-color-scheme: light)').matches;
+  var theme = stored || (prefersLight ? 'light' : 'dark');
+
+  function applyTheme(t) {
+    root.setAttribute('data-theme', t);
+    themeBtn.textContent = t === 'light' ? '☾' : '☀';
+    try { localStorage.setItem('theme', t); } catch (e) {}
+  }
+  applyTheme(theme);
+  themeBtn.addEventListener('click', function () {
+    theme = root.getAttribute('data-theme') === 'light' ? 'dark' : 'light';
+    applyTheme(theme);
+  });
+
+  // ---------- Idioma ----------
+  var langBtn = document.getElementById('langBtn');
+  var nodes = document.querySelectorAll('[data-pt][data-en]');
+  var lang = null;
+  try { lang = localStorage.getItem('lang'); } catch (e) {}
+  lang = lang || 'pt';
+
+  function applyLang(l) {
+    for (var i = 0; i < nodes.length; i++) {
+      nodes[i].innerHTML = nodes[i].getAttribute(l === 'en' ? 'data-en' : 'data-pt');
+    }
+    root.lang = l === 'en' ? 'en' : 'pt-BR';
+    langBtn.textContent = l === 'en' ? 'PT' : 'EN';
+    try { localStorage.setItem('lang', l); } catch (e) {}
+  }
+  applyLang(lang);
+  langBtn.addEventListener('click', function () {
+    lang = lang === 'en' ? 'pt' : 'en';
+    applyLang(lang);
+  });
+})();
+</script>
+</body>
+</html>
