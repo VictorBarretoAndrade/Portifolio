@@ -509,6 +509,8 @@ table.data {
 .thumb-tall { aspect-ratio: 3 / 4; }
 .thumb-light { background: #fff; }
 .gallery-wide .thumb { aspect-ratio: 2 / 1; }
+.gallery-photo .thumb { aspect-ratio: 4 / 3; }
+.gallery-photo .thumb img { object-fit: cover; }
 .gallery figcaption { font-size: .85rem; color: var(--text-dim); margin-top: 7px; line-height: 1.45; }
 
 .lightbox {
@@ -587,14 +589,6 @@ table.data {
 .edu-list > li:last-child { border-bottom: 0; }
 .edu-list p { margin: 0; }
 
-/* ---------- Two-column media layout ---------- */
-.split { display: grid; grid-template-columns: minmax(0, 1.6fr) minmax(0, 1fr); gap: 16px; align-items: start; }
-.split .figure { margin: 0; }
-.split .gallery { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 12px; }
-@media (max-width: 760px) {
-  .split { grid-template-columns: minmax(0, 1fr); }
-}
-
 /* ---------- Contact ---------- */
 .contact-list {
   display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
@@ -670,7 +664,7 @@ table.data {
   .meta-row, .meta-line { margin-left: 0; margin-right: 0; padding-left: 0; padding-right: 0; }
 
   .site-header, .skip-link, .lightbox, .actions, .nav-tools,
-  #demo, .figure:has(video), .gallery, .split, .figure-narrow, .card-wide .figure,
+  #demo, .figure:has(video), .gallery, .figure-narrow, .card-wide .figure,
   .hero-figure figcaption { display: none !important; }
 
   .hero { padding: 0 0 10pt; }
