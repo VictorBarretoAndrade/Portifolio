@@ -40,7 +40,8 @@
     root.setAttribute('data-theme', theme);
     var btn = document.getElementById('themeBtn');
     if (btn) {
-      var label = btn.getAttribute(theme === 'light' ? 'data-label-dark' : 'data-label-light');
+      var l = root.getAttribute('lang') === 'pt-BR' ? 'pt' : 'en';
+      var label = btn.getAttribute('data-' + l + '-label-' + (theme === 'light' ? 'dark' : 'light'));
       if (label) {
         btn.setAttribute('aria-label', label);
         btn.setAttribute('title', label);
@@ -83,8 +84,7 @@
       });
     });
     root.setAttribute('lang', l === 'pt' ? 'pt-BR' : 'en');
-    var title = document.querySelector('meta[name="title-' + l + '"]');
-    if (title) document.title = title.getAttribute('content');
+    setTheme(root.getAttribute('data-theme'));
   }
 
   function initLang() {
