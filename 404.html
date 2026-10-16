@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Page not found — Victor Gonçalves</title>
+<meta name="robots" content="noindex">
+<meta name="color-scheme" content="dark light">
+<link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%23ffffff'/%3E%3Crect x='2' y='2' width='60' height='60' rx='12' fill='none' stroke='%231F3A5F' stroke-width='3'/%3E%3Ctext x='32' y='43' font-family='Arial,Helvetica,sans-serif' font-size='27' font-weight='700' text-anchor='middle' fill='%231F3A5F'%3EVG%3C/text%3E%3C/svg%3E">
+<!-- Self-contained on purpose: this page can be served at any depth, where relative asset paths would not resolve. -->
+<style>
+  :root { --bg: #0b0f17; --text: #e8ecf4; --dim: #a3aec3; --link: #6eb1ff; --border: #253048; }
+  @media (prefers-color-scheme: light) {
+    :root { --bg: #f7f9fc; --text: #1a2333; --dim: #4d5a6e; --link: #2a65a3; --border: #dbe2ec; }
+  }
+  * { box-sizing: border-box; }
+  body {
+    margin: 0; min-height: 100vh; display: grid; place-items: center; padding: 24px 16px;
+    background: var(--bg); color: var(--text);
+    font: 16px/1.6 -apple-system, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+  }
+  main { max-width: 34rem; border-left: 4px solid var(--link); padding: 8px 0 8px 20px; }
+  p.code { margin: 0; color: var(--dim); font-weight: 700; letter-spacing: .08em; text-transform: uppercase; font-size: .8rem; }
+  h1 { margin: 6px 0 10px; font-size: 1.6rem; line-height: 1.25; }
+  p { margin: 0 0 16px; color: var(--dim); }
+  a { color: var(--link); font-weight: 600; }
+  a:focus-visible { outline: 3px solid var(--link); outline-offset: 2px; border-radius: 4px; }
+</style>
+</head>
+<body>
+<main>
+  <p class="code">404</p>
+  <h1>Page not found</h1>
+  <p>This address does not exist on Victor Gonçalves's portfolio.</p>
+  <a id="home" href="./">Back to the portfolio</a>
+</main>
+<script>
+  // The site lives at "/" on Vercel and at "/Portifolio/" on GitHub Pages.
+  (function () {
+    var m = location.pathname.match(/^\/Portifolio(\/|$)/i);
+    document.getElementById('home').setAttribute('href', m ? '/Portifolio/' : '/');
+  })();
+</script>
+</body>
+</html>

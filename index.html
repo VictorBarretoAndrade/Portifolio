@@ -7,6 +7,19 @@
 <meta name="description" content="Computer Engineering student building AI for real systems: a simulated cobot sorting cell with YOLO and safety-first control, an AI agent deployed with guardrails, and computer vision on an inspection robot.">
 <meta name="author" content="Victor Barreto Andrade Gonçalves">
 <meta name="color-scheme" content="dark light">
+<link rel="canonical" href="https://portifolio-one-zeta-47.vercel.app/">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://portifolio-one-zeta-47.vercel.app/">
+<meta property="og:title" content="Victor Barreto Andrade Gonçalves — Industrial AI Portfolio">
+<meta property="og:description" content="Computer Engineering student building AI for real systems: a simulated cobot sorting cell with YOLO and safety-first control, an AI agent deployed with guardrails, and computer vision on an inspection robot.">
+<meta property="og:image" content="https://portifolio-one-zeta-47.vercel.app/assets/img/og-image.jpg">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="CobotSort AI simulation: the cobot sorts cubes by color; top right, the top camera with YOLO detections.">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Victor Barreto Andrade Gonçalves — Industrial AI Portfolio">
+<meta name="twitter:description" content="Computer Engineering student building AI for real systems: a simulated cobot sorting cell with YOLO and safety-first control, an AI agent deployed with guardrails, and computer vision on an inspection robot.">
+<meta name="twitter:image" content="https://portifolio-one-zeta-47.vercel.app/assets/img/og-image.jpg">
 <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%23ffffff'/%3E%3Crect x='2' y='2' width='60' height='60' rx='12' fill='none' stroke='%231F3A5F' stroke-width='3'/%3E%3Ctext x='32' y='43' font-family='Arial,Helvetica,sans-serif' font-size='27' font-weight='700' text-anchor='middle' fill='%231F3A5F'%3EVG%3C/text%3E%3C/svg%3E">
 <link rel="stylesheet" href="assets/css/site.css">
 <script src="assets/js/site.js"></script>
@@ -337,6 +350,286 @@
         </div>
       </div>
     </details>
+  </div>
+</section>
+
+<!-- ===================== EduBot ===================== -->
+<section class="section case" id="edubot" data-nav="cobotsort" aria-labelledby="edubot-title">
+  <div class="wrap">
+    <p class="kicker">Project</p>
+    <h2 class="section-title" id="edubot-title">EduBot — AI agent for personalized learning</h2>
+    <ul class="meta-line">
+      <li>Project Lead and Tech Lead, team of 8</li>
+      <li>2026</li>
+      <li>Python/Flask, MySQL, React + TypeScript, Claude via AWS Bedrock</li>
+      <li><a href="https://github.com/VictorBarretoAndrade/EduBot" target="_blank" rel="noopener">GitHub</a></li>
+    </ul>
+
+    <div class="callout" role="note">
+      <span class="callout-title">Why it matters for this skill</span>
+      <p>It is an AI agent working inside a real system: it acts through controlled tools, its inputs are validated, a rule-based fallback takes over if the model fails, and high-impact actions wait for human approval. CobotSort's operator agent reuses this design.</p>
+    </div>
+
+    <div class="recognition">
+      <ul class="badges" aria-label="Recognition">
+        <li class="badge badge-accent">HACKaSTONE 2026 Grand Finalist</li>
+        <li class="badge badge-accent">Lead-author paper accepted — AI for Education NL 2026</li>
+      </ul>
+      <p>Grand Finalist of HACKaSTONE 2026, a global contest on AI for education (Grand Final in Amsterdam). Lead-author paper on EduBot accepted at the Conference AI for Education The Netherlands 2026.</p>
+    </div>
+
+    <h3 class="sub-title">The data loop: student behavior feeds the AI</h3>
+    <figure class="figure">
+      <div class="flow-loop">
+        <ol class="flow" aria-label="The data loop: student behavior feeds the AI">
+          <li><span class="step" aria-hidden="true">1</span><span class="step-title">The student studies</span><span class="step-text">Reads, watches the video, listens to the podcast, takes the quiz.</span></li>
+          <li><span class="step" aria-hidden="true">2</span><span class="step-title">The platform tracks</span><span class="step-text">Reading time, scroll %, video %, every quiz attempt with time.</span></li>
+          <li><span class="step" aria-hidden="true">3</span><span class="step-title">One student profile</span><span class="step-text">Error rate per competency, days inactive, preferred format.</span></li>
+          <li><span class="step" aria-hidden="true">4</span><span class="step-title">The agent decides</span><span class="step-text">Claude reads the profile, finds the weakest competency, queries tools.</span></li>
+          <li><span class="step" aria-hidden="true">5</span><span class="step-title">Tailored reinforcement</span><span class="step-text">A new study path in the preferred format, plus a quiz.</span></li>
+        </ol>
+        <p class="flow-return"><span><strong>Feedback:</strong> what the student does with the reinforcement becomes new data and rewrites the profile</span></p>
+      </div>
+      <figcaption>Teachers keep the decisions: a class dashboard with indicators and an alerts center, and an approval queue where high-impact agent actions wait for the teacher.</figcaption>
+    </figure>
+
+    <h3 class="sub-title">What I did</h3>
+    <ul class="bullets">
+      <li>Led the 8-person team as project lead and tech lead: defined the architecture and integrated back end, front end and AI layer.</li>
+      <li>Tool-use loop on the Anthropic API (Claude via AWS Bedrock) behind an interchangeable provider layer (mock / Bedrock / direct API), with four controlled tools and a rule-based fallback.</li>
+      <li>Guardrails: the student's identity comes only from the session token; record IDs are validated before any tool runs.</li>
+      <li>Python/Flask REST API with 67 endpoints, MySQL with 31 tables, React + TypeScript front end, Docker Compose, 332 automated tests.</li>
+    </ul>
+
+    <h3 class="sub-title">Gallery</h3>
+    <ul class="gallery gallery-3 gallery-wide">
+      <li><figure>
+        <a class="thumb thumb-light" href="assets/img/edubot/dashboard.jpg" data-gallery="edubot"><img src="assets/img/edubot/dashboard.jpg" width="1600" height="790" loading="lazy" decoding="async" alt="Student dashboard: EduBot welcomes the student and proposes reinforcement paths."></a>
+        <figcaption>Student dashboard: EduBot welcomes the student and proposes reinforcement paths.</figcaption>
+      </figure></li>
+      <li><figure>
+        <a class="thumb thumb-light" href="assets/img/edubot/content-area.jpg" data-gallery="edubot"><img src="assets/img/edubot/content-area.jpg" width="1500" height="548" loading="lazy" decoding="async" alt="Content area: reading progress is tracked, and reinforcement texts appear for the weak topic."></a>
+        <figcaption>Content area: reading progress is tracked, and reinforcement texts appear for the weak topic.</figcaption>
+      </figure></li>
+      <li><figure>
+        <a class="thumb thumb-light" href="assets/img/edubot/progress.jpg" data-gallery="edubot"><img src="assets/img/edubot/progress.jpg" width="1600" height="790" loading="lazy" decoding="async" alt="Progress page: level, achievements, class ranking by nickname, and the EduBot avatar."></a>
+        <figcaption>Progress page: level, achievements, class ranking by nickname, and the EduBot avatar.</figcaption>
+      </figure></li>
+    </ul>
+  </div>
+</section>
+
+<!-- ===================== Leak Track ===================== -->
+<section class="section case" id="leaktrack" data-nav="cobotsort" aria-labelledby="leaktrack-title">
+  <div class="wrap">
+    <p class="kicker">Project</p>
+    <h2 class="section-title" id="leaktrack-title">Leak Track — autonomous industrial inspection robot</h2>
+    <ul class="meta-line">
+      <li>IEEE Robotics and Automation Society, SENAI CIMATEC</li>
+      <li>Trainee, March – December 2024</li>
+      <li>ROS 2, Python, OpenCV, CNNs, FLIR thermal camera</li>
+    </ul>
+
+    <div class="callout" role="note">
+      <span class="callout-title">Why it matters for this skill</span>
+      <p>It is industrial AI on real hardware: a neural network reads a camera on a robot, and the result drives an inspection task in places that are dangerous or hard to reach for people.</p>
+    </div>
+
+    <div class="split">
+      <figure class="figure">
+        <a class="frame frame-link" href="assets/img/leaktrack/thermal-capture-crop.jpg" data-gallery="leaktrack"><img src="assets/img/leaktrack/thermal-capture-crop.jpg" width="1110" height="820" loading="lazy" decoding="async" alt="In the lab: collecting thermal images for the dataset with the thermal camera (in hand) and our Python capture script (on screen)."></a>
+        <figcaption>In the lab: collecting thermal images for the dataset with the thermal camera (in hand) and our Python capture script (on screen).</figcaption>
+      </figure>
+      <ul class="gallery">
+        <li><figure>
+          <a class="thumb thumb-tall" href="assets/img/leaktrack/thermal-capture-1.jpg" data-gallery="leaktrack"><img src="assets/img/leaktrack/thermal-capture-1.jpg" width="1000" height="1333" loading="lazy" decoding="async" alt="Thermal capture experiment in the lab: wider view of the setup."></a>
+          <figcaption>Thermal capture experiment in the lab: wider view of the setup.</figcaption>
+        </figure></li>
+        <li><figure>
+          <a class="thumb thumb-tall" href="assets/img/leaktrack/thermal-capture-2.jpg" data-gallery="leaktrack"><img src="assets/img/leaktrack/thermal-capture-2.jpg" width="1000" height="1333" loading="lazy" decoding="async" alt="Thermal capture experiment in the lab: another capture with the same setup."></a>
+          <figcaption>Thermal capture experiment in the lab: another capture with the same setup.</figcaption>
+        </figure></li>
+      </ul>
+    </div>
+
+    <h3 class="sub-title">Pipeline</h3>
+    <ol class="flow" aria-label="Leak Track pipeline">
+      <li><span class="step" aria-hidden="true">1</span><span class="step-title">Thermal camera</span><span class="step-text">FLIR camera on the robot</span></li>
+      <li><span class="step" aria-hidden="true">2</span><span class="step-title">Python + OpenCV</span><span class="step-text">Capture and preprocessing of thermal frames</span></li>
+      <li><span class="step" aria-hidden="true">3</span><span class="step-title">CNN</span><span class="step-text">Finds temperature changes linked to leaks</span></li>
+      <li><span class="step" aria-hidden="true">4</span><span class="step-title">ROS 2</span><span class="step-text">Moves the robot to inspect the structure</span></li>
+    </ol>
+
+    <ul class="bullets bullets-after">
+      <li>Co-developed, as a trainee, a robot that detects leaks in industrial structures: ROS 2 control, Python and OpenCV image processing, and CNNs on FLIR thermal images to find temperature changes linked to leaks in real time.</li>
+      <li>Ran the thermal-image capture experiments shown above to build the dataset.</li>
+    </ul>
+  </div>
+</section>
+
+<!-- ===================== More projects ===================== -->
+<section class="section" id="more-projects" data-nav="cobotsort" aria-labelledby="more-title">
+  <div class="wrap">
+    <h2 class="section-title" id="more-title">More projects</h2>
+    <ul class="cards cards-3">
+      <li class="card">
+        <h3>Chest X-ray diagnosis with CNNs</h3>
+        <p class="card-meta">IEEE RAS · Project Advisor · January 2025 – January 2026</p>
+        <p>Guided a multidisciplinary team that built a CNN separating healthy lungs from pneumonia and tuberculosis cases, from data curation and validation to a results interface. Next stage: object detection (Faster R-CNN) on the RSNA dataset.</p>
+      </li>
+      <li class="card">
+        <h3>AWS DeepRacer — reinforcement learning</h3>
+        <p class="card-meta">2025</p>
+        <p>Trained reinforcement learning models for an autonomous race car. 6th place in the Brazilian National Final (CSBC 2025) and 3rd place in the Northeast semifinal.</p>
+      </li>
+      <li class="card">
+        <h3>HPC internship</h3>
+        <p class="card-meta">SENAI CIMATEC · October 2025 – present</p>
+        <p>Deep learning (PyTorch, TensorFlow) for molecular simulation and drug discovery, trained on a SLURM-managed GPU cluster with parallel jobs and GPU allocation.</p>
+      </li>
+      <li class="card card-wide">
+        <div>
+          <h3>CatchNet — decision support for power distribution networks</h3>
+          <p class="card-meta">Co-author · 2026 · poster at SIINTEC 2026 · <a href="https://github.com/VictorBarretoAndrade/CatchNet" target="_blank" rel="noopener">GitHub</a></p>
+          <p>Specification and prototype of an application that helps electricity utilities manage non-technical losses (energy theft and fraud). Consumer units are ranked by risk so field teams inspect the right places first; designed to plug in a machine learning model that scores theft probability.</p>
+        </div>
+        <figure class="figure">
+          <a class="frame frame-light frame-link" href="assets/img/catchnet/consumer-units.jpg" data-gallery="catchnet"><img src="assets/img/catchnet/consumer-units.jpg" width="1600" height="620" loading="lazy" decoding="async" alt="CatchNet prototype (Portuguese interface): consumer units sorted by risk, with one-click dispatch of a field technician."></a>
+          <figcaption>CatchNet prototype (Portuguese interface): consumer units sorted by risk, with one-click dispatch of a field technician.</figcaption>
+        </figure>
+      </li>
+    </ul>
+  </div>
+</section>
+
+<!-- ===================== Publications ===================== -->
+<section class="section" id="publications" aria-labelledby="publications-title">
+  <div class="wrap">
+    <h2 class="section-title" id="publications-title">Publications</h2>
+    <ol class="pub-list">
+      <li>
+        <p class="pub-role"><span class="badge badge-accent">Lead author</span></p>
+        <p><span class="pub-title">“What Instantiation Reveals: Building an Agentic Remediation Loop on Top of a Conceptual Model for AI-Enhanced Virtual Learning Environments.”</span> Accepted for presentation at the Conference AI for Education The Netherlands 2026, Amsterdam.</p>
+        <p>The paper presents EduBot as the instantiation of the model.</p>
+      </li>
+      <li>
+        <p class="pub-role"><span class="badge">Co-author</span></p>
+        <p>Vilas Boas JB, Rodrigues RSC, <strong>Gonçalves VBA</strong>, Silva YQJ, Johnsson MLN, Lima CSPC. <span class="pub-title">“CatchNet: Specification and Prototyping of a Decision-Support Application for Non-Technical Loss Management in Power Distribution Networks.”</span></p>
+        <p>Poster, SIINTEC 2026 (International Symposium on Innovation and Technology, SENAI CIMATEC).</p>
+      </li>
+    </ol>
+  </div>
+</section>
+
+<!-- ===================== Experience and education ===================== -->
+<section class="section" id="experience" aria-labelledby="experience-title">
+  <div class="wrap">
+    <h2 class="section-title" id="experience-title">Experience</h2>
+    <ol class="timeline">
+      <li class="card">
+        <div class="tl-head"><h3>High Performance Computing (HPC) Intern</h3><span class="tl-dates">Oct 2025 – present</span></div>
+        <p class="tl-org">SENAI CIMATEC, Salvador</p>
+        <p>Deep learning (PyTorch, TensorFlow) to speed up molecular simulations and predictive models for drug discovery; training on a SLURM GPU cluster; data processing with Python, pandas and SQL.</p>
+      </li>
+      <li class="card">
+        <div class="tl-head"><h3>Treasurer (earlier: Trainee, Project Advisor)</h3><span class="tl-dates">Mar 2024 – present (volunteer)</span></div>
+        <p class="tl-org">IEEE Robotics and Automation Society, Student Chapter</p>
+        <p>Budget planning and fundraising through IEEE grants and sponsors. Trainee on Leak Track (2024); Project Advisor of the X-ray project (2025–2026).</p>
+      </li>
+      <li class="card">
+        <div class="tl-head"><h3>Google Student Ambassador</h3><span class="tl-dates">Aug 2026 – present (volunteer)</span></div>
+        <p class="tl-org">Google, SENAI CIMATEC campus</p>
+        <p>Designed and ran an AI competition on Google Skills during SEMCOMP 2026: participants built prototypes in Google AI Studio and earned an official badge.</p>
+      </li>
+      <li class="card">
+        <div class="tl-head"><h3>AWS Student Builder Group Leader (formerly Cloud Club Captain)</h3><span class="tl-dates">Nov 2025 – Jul 2026 (volunteer)</span></div>
+        <p class="tl-org">Amazon Web Services, SENAI CIMATEC campus</p>
+        <p>Led the campus cloud community with workshops on AWS and AI.</p>
+      </li>
+      <li class="card">
+        <div class="tl-head"><h3>Teaching monitor and problem setter</h3><span class="tl-dates">Nov 2024 – present (volunteer)</span></div>
+        <p class="tl-org">Competitive Programming Club, SENAI CIMATEC</p>
+        <p>Taught C++ algorithms; the club's 4 teams placed 2nd, 5th, 8th and 11th of 22 at the regional ICPC-format contest. Problem setter for the 2nd Cimatec Computing Olympiad (OCC), October 2026.</p>
+      </li>
+    </ol>
+
+    <h3 class="sub-title">Education</h3>
+    <ul class="edu-list">
+      <li><p><strong>SENAI CIMATEC University</strong>, Salvador, Brazil — B.Eng. Computer Engineering (5-year program), January 2024 – December 2028 (expected); currently 3rd year.</p></li>
+      <li><p><strong>BRICS Hi-Tech Skills Camp 2026</strong> — Development and Implementation of Industrial AI Solutions (September 21–23, 2026, online): collaborative robotics, robot programming and control, neural networks; programmed the ARM95 cobot.</p></li>
+      <li><p><strong>Certifications:</strong> Microsoft Certified: Azure AI Fundamentals; EF SET English Certificate (C2 Proficient).</p></li>
+    </ul>
+  </div>
+</section>
+
+<!-- ===================== Awards ===================== -->
+<section class="section" id="awards" aria-labelledby="awards-title">
+  <div class="wrap">
+    <h2 class="section-title" id="awards-title">Awards and selections</h2>
+    <ul class="award-list">
+      <li><strong>Grand Finalist</strong> — HACKaSTONE 2026, global contest on AI for education (Grand Final in Amsterdam).</li>
+      <li><strong>6th place, National Final</strong> — AWS DeepRacer, CSBC 2025; 3rd place in the Northeast semifinal.</li>
+      <li><strong>2nd place of 22 teams, Salvador site</strong> — Brazilian Programming Marathon of the Brazilian Computer Society (SBC, ICPC sub-regional), 2026; Honorable Mention in 2024 and 2025.</li>
+      <li><strong>1st place</strong> — SEMCOMP 26 Programming Marathon, Federal University of Bahia (UFBA), 2026.</li>
+      <li><strong>3rd place in Bahia</strong> — 1st Northeastern Brazil Programming Contest (ICPC format), 2026.</li>
+      <li><strong>2nd place</strong> — Scientific Article Competition, Researcher Challenge Seminar (<span lang="pt">Seminário Desafio Pesquisador</span>), SENAI CIMATEC.</li>
+      <li><strong>1 of 28 students selected in Brazil</strong> — 9th HackLab FNESP 2026, innovation marathon (Semesp).</li>
+      <li>Selected by Google (Student Ambassador 2026) and by AWS (Student Builder Group Leader 2025–2026).</li>
+    </ul>
+  </div>
+</section>
+
+<!-- ===================== Skills ===================== -->
+<section class="section" id="skills" aria-labelledby="skills-title">
+  <div class="wrap">
+    <h2 class="section-title" id="skills-title">Skills</h2>
+    <div class="table-wrap" role="region" aria-labelledby="skills-title" tabindex="0">
+      <table class="data data-mid data-stack">
+        <thead>
+          <tr><th scope="col">Area</th><th scope="col">Skills and tools</th><th scope="col">Where I used them</th></tr>
+        </thead>
+        <tbody>
+          <tr>
+            <th scope="row">Collaborative industrial robotics</th>
+            <td data-label="Skills and tools">ARM95 cobot programming (waypoints, joint and linear moves, vacuum tool); forward and inverse kinematics; DH parameters; singularities; cobot safety; MuJoCo simulation</td>
+            <td data-label="Where I used them">CobotSort; Skills Camp 2026; Leak Track</td>
+          </tr>
+          <tr>
+            <th scope="row">Programming and control</th>
+            <td data-label="Skills and tools">Python, C++, SQL, TypeScript; ROS 2; Git, GitHub, GitLab; REST APIs (Flask); user interfaces (PyQt6, React)</td>
+            <td data-label="Where I used them">CobotSort; Leak Track; EduBot</td>
+          </tr>
+          <tr>
+            <th scope="row">Neural networks and computer vision</th>
+            <td data-label="Skills and tools">PyTorch, TensorFlow, Keras; CNNs; OpenCV; thermal imaging (FLIR); object detection (YOLO, Faster R-CNN); data augmentation; precision, recall, mAP</td>
+            <td data-label="Where I used them">CobotSort; Leak Track; X-ray project; HPC internship</td>
+          </tr>
+          <tr>
+            <th scope="row">AI implementation and deployment</th>
+            <td data-label="Skills and tools">Docker, Linux, GPU clusters (SLURM), AWS; LLM agents with tool use; guardrails and fallback logic; automated testing</td>
+            <td data-label="Where I used them">CobotSort; EduBot; HPC internship</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</section>
+
+<!-- ===================== Contact ===================== -->
+<section class="section" id="contact" aria-labelledby="contact-title">
+  <div class="wrap">
+    <h2 class="section-title" id="contact-title">Contact</h2>
+    <ul class="contact-list">
+      <li><span class="contact-label">Email</span><a href="mailto:victorba.goncalves@gmail.com">victorba.goncalves@gmail.com</a></li>
+      <li><span class="contact-label">Phone</span><a href="tel:+5571988315880">+55 71 98831-5880</a></li>
+      <li><span class="contact-label">LinkedIn</span><a href="https://www.linkedin.com/in/victor-barreto-andrade-gon%C3%A7alves-8148872ba/" target="_blank" rel="noopener">Victor Barreto Andrade Gonçalves</a></li>
+      <li><span class="contact-label">GitHub</span><a href="https://github.com/VictorBarretoAndrade" target="_blank" rel="noopener">VictorBarretoAndrade</a></li>
+      <li><span class="contact-label">Location</span><span class="val">Salvador, Bahia, Brazil</span></li>
+    </ul>
+    <div class="actions">
+      <a class="btn btn-primary" href="assets/docs/Victor_Goncalves_CV.pdf" target="_blank" rel="noopener">Download CV (PDF)</a>
+      <a class="btn" href="assets/docs/Victor_Goncalves_Portfolio.pdf" target="_blank" rel="noopener">Portfolio (PDF)</a>
+    </div>
   </div>
 </section>
 
