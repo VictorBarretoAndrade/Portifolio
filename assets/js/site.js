@@ -264,7 +264,23 @@
     });
   }
 
+  // ---------- Print: closed <details> would hide their content on paper ----------
+  function initPrint() {
+    var opened = [];
+    window.addEventListener('beforeprint', function () {
+      each(document.querySelectorAll('details:not([open])'), function (d) {
+        d.open = true;
+        opened.push(d);
+      });
+    });
+    window.addEventListener('afterprint', function () {
+      each(opened, function (d) { d.open = false; });
+      opened = [];
+    });
+  }
+
   function init() {
+    initPrint();
     initTheme();
     initLang();
     initNav();
