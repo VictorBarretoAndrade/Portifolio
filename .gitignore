@@ -1,0 +1,7 @@
+SPEC.md
+CLAUDE.md
+.claude/
+site_assets.zip
+site_assets/
+.checks/
+__pycache__/
